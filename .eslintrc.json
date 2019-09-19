@@ -1,0 +1,40 @@
+{
+    "extends": "airbnb-base",
+    "rules": {
+        "indent": [
+            2,
+            2,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "no-bitwise": [
+            "error"
+        ],
+        "comma-dangle": [
+            2,
+            "never"
+        ],
+        "comma-spacing": [
+            2,
+            {
+                "before": false,
+                "after": true
+            }
+        ]
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": false,
+        "mocha": true
+    },
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    }
+}
