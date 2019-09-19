@@ -19,9 +19,11 @@ app.get('/', (req, res) => {
   res.send('Welcome!');
 });
 
-app.use(routes);
+app.use('/api/v1',routes);
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`Secure AJOCARD Transaction API listening on ${PORT}`);
 });
+
+module.exports = app;

@@ -13,7 +13,7 @@ const successResponse = (data, message, res) => {
     data,
     message
   };
-  return res.status(422).send(resp);
+  return res.status(200).send(resp);
 };
 
 const createdResponse = (data, message, res) => {

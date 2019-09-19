@@ -62,22 +62,22 @@ API is deployed at [here](https://my-ajocard.herokuapp.com/) on heroku.
 	</tr>
 	<tr>
 		<td>POST</td>
-		<td>/auth/signup</td> 
+		<td>/api/v1/auth/signup</td> 
 		<td>Create user account</td>
 	</tr>
 	<tr>
 		<td>POST</td>
-		<td>/transfer</td> 
+		<td>/api/v1/transfer</td> 
 		<td>Initialize Transfer</td>
 	</tr>
 	<tr>
 		<td>POST</td>
-		<td>/confirm/transfer</td> 
+		<td>/api/v1/confirm/transfer</td> 
 		<td>Confirm Transfer</td>
 	</tr>
 	<tr>
 		<td>GET</td>
-		<td>/transactions</td> 
+		<td>/api/v1/transactions</td> 
 		<td>To fetch all transactions</td>
 	</tr>
 </table>  
