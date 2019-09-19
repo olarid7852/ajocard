@@ -1,6 +1,6 @@
 # Ajocard
 
-WayFarer is a test api server, built for transactions
+Ajocard is a test api server, built for transactions
 
 ## Features
 
