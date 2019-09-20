@@ -18,12 +18,12 @@ class TransactionController {
     try {
       // check sender and receiver detail
       const [sender, receiver] = await Promise.all([
-        User.findOne({ wallet_id: value.sender_wallet_id }).select({ password: 0 }),
-        User.findOne({ wallet_id: value.receiver_wallet_id }).select({ password: 0 })
+        User.findOne({ wallet_id: value.sender_wallet_id }).select({
+          password: 0, wallet_balance: 0, wallet_pin: 0 }),
+        User.findOne({ wallet_id: value.receiver_wallet_id }).select({
+          password: 0, wallet_balance: 0, wallet_pin: 0 })
       ]);
       // Return immediately if sender and receiver do not exist
-      console.log(sender);
-      console.log(receiver);
       if (!sender) return notFoundResponse('Sender not found', res);
       if (!receiver) return notFoundResponse('Receiver not found', res);
       // Check PIN
@@ -34,6 +34,7 @@ class TransactionController {
       value.sender_details = sender;
       value.receiver_details = receiver;
       value.status = 'Pending';
+      delete value.wallet_pin;
       value.otp = Math.floor(Math.random() * 10000);
       sender.wallet_balance -= value.amount;
       // Remove amount from Sender
