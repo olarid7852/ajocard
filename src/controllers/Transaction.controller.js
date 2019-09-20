@@ -68,6 +68,11 @@ class TransactionController {
 
       const receiverDetails = existingTransaction.receiver_details;
       const newBalance = receiverDetails.wallet_balance + existingTransaction.amount;
+      // Remove sensitive data
+      delete existingTransaction.wallet_pin;
+      delete existingTransaction.receiver_details.wallet_pin;
+      delete existingTransaction.sender_details.wallet_pin;
+
       const [receiver, transaction] = await Promise.all([
       // eslint-disable-next-line no-underscore-dangle
         User.findByIdAndUpdate(receiverDetails._id, { wallet_balance: newBalance }),
