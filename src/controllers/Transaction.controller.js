@@ -22,6 +22,8 @@ class TransactionController {
         User.findOne({ wallet_id: value.receiver_wallet_id }).select({ password: 0 })
       ]);
       // Return immediately if sender and receiver do not exist
+      console.log(sender);
+      console.log(receiver);
       if (!sender) return notFoundResponse('Sender not found', res);
       if (!receiver) return notFoundResponse('Receiver not found', res);
       // Check PIN
